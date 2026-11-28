@@ -1,0 +1,490 @@
+{
+ "plan": {
+  "id": "tpl-conference",
+  "name": "Conference or offsite",
+  "kind": "template",
+  "dates": "",
+  "venue": "",
+  "note": "Sessions over two days with speakers, attendees, sponsors and a budget.",
+  "days": 2
+ },
+ "docs": [
+  {
+   "path": "meta/config",
+   "data": {
+    "sections": [
+     {
+      "key": "gen",
+      "kind": "general",
+      "label": "Planning",
+      "long": "Planning",
+      "date": "",
+      "note": "",
+      "color": 0
+     },
+     {
+      "key": "d1",
+      "kind": "day",
+      "label": "Day 1",
+      "long": "Day 1",
+      "date": "",
+      "note": "",
+      "color": 4
+     },
+     {
+      "key": "d2",
+      "kind": "day",
+      "label": "Day 2",
+      "long": "Day 2",
+      "date": "",
+      "note": "",
+      "color": 5
+     }
+    ],
+    "entryTypes": [
+     {
+      "name": "Session",
+      "slots": [
+       "Keynote",
+       "Talk",
+       "Workshop",
+       "Panel"
+      ],
+      "daily": [],
+      "sourceLabel": "Format",
+      "sources": [
+       "In person",
+       "Remote",
+       "Hybrid"
+      ],
+      "tasks": [
+       "AV check"
+      ],
+      "taskSlots": []
+     },
+     {
+      "name": "Break"
+     },
+     {
+      "name": "Meal",
+      "slots": [
+       "Breakfast",
+       "Coffee",
+       "Lunch",
+       "Dinner"
+      ],
+      "daily": [
+       "Lunch"
+      ],
+      "sourceLabel": "Food source",
+      "sources": [
+       "Catered",
+       "Venue",
+       "Restaurant"
+      ],
+      "tasks": [],
+      "taskSlots": []
+     },
+     {
+      "name": "Social"
+     },
+     {
+      "name": "Travel"
+     },
+     {
+      "name": "Task",
+      "general": true
+     }
+    ],
+    "itemKinds": [
+     {
+      "name": "Do",
+      "label": "To do",
+      "task": true
+     },
+     {
+      "name": "Book",
+      "label": "To book"
+     },
+     {
+      "name": "Buy",
+      "label": "To buy"
+     },
+     {
+      "name": "Bring",
+      "label": "To bring"
+     },
+     {
+      "name": "Print",
+      "label": "To print"
+     }
+    ],
+    "statuses": [
+     {
+      "name": "Not started"
+     },
+     {
+      "name": "In progress",
+      "tone": "warn"
+     },
+     {
+      "name": "Waiting",
+      "tone": "warn"
+     },
+     {
+      "name": "Confirmed",
+      "tone": "good"
+     },
+     {
+      "name": "Done/Planned",
+      "done": true
+     },
+     {
+      "name": "Not needed",
+      "skip": true
+     }
+    ],
+    "teamTypes": [
+     "Organizers",
+     "Volunteers",
+     "Speakers"
+    ],
+    "tables": [
+     {
+      "id": "attendees",
+      "name": "Attendees",
+      "one": "attendee",
+      "group": "ticket",
+      "fields": [
+       {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "org",
+        "label": "Organization",
+        "type": "text"
+       },
+       {
+        "key": "ticket",
+        "label": "Ticket",
+        "type": "choice",
+        "options": [
+         "Standard",
+         "Speaker",
+         "Sponsor",
+         "Staff"
+        ]
+       },
+       {
+        "key": "here",
+        "label": "Checked in",
+        "type": "check",
+        "quick": true
+       },
+       {
+        "key": "diet",
+        "label": "Food needs",
+        "type": "text"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "speakers",
+      "name": "Speakers",
+      "one": "speaker",
+      "group": "status",
+      "fields": [
+       {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "talk",
+        "label": "Talk",
+        "type": "text"
+       },
+       {
+        "key": "status",
+        "label": "Status",
+        "type": "choice",
+        "options": [
+         "Invited",
+         "Confirmed",
+         "Declined"
+        ],
+        "quick": true,
+        "attention": [
+         "Invited"
+        ]
+       },
+       {
+        "key": "travel",
+        "label": "Travel booked",
+        "type": "check"
+       },
+       {
+        "key": "host",
+        "label": "Our host",
+        "type": "person"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "sponsors",
+      "name": "Sponsors",
+      "one": "sponsor",
+      "group": "level",
+      "fields": [
+       {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "level",
+        "label": "Level",
+        "type": "choice",
+        "options": [
+         "Gold",
+         "Silver",
+         "Bronze"
+        ]
+       },
+       {
+        "key": "amount",
+        "label": "Amount",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "check",
+        "quick": true
+       },
+       {
+        "key": "contact",
+        "label": "Contact",
+        "type": "text"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "budget",
+      "name": "Budget",
+      "one": "line",
+      "group": "category",
+      "fields": [
+       {
+        "key": "category",
+        "label": "Category",
+        "type": "text"
+       },
+       {
+        "key": "description",
+        "label": "Description",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "est",
+        "label": "Estimate",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "path": "meta/people",
+   "data": {
+    "people": [],
+    "teams": []
+   }
+  },
+  {
+   "path": "entries/e01",
+   "data": {
+    "sec": "gen",
+    "seq": 10,
+    "type": "Task",
+    "slot": "",
+    "title": "Book the venue",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e02",
+   "data": {
+    "sec": "gen",
+    "seq": 20,
+    "type": "Task",
+    "slot": "",
+    "title": "Open registration",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e03",
+   "data": {
+    "sec": "gen",
+    "seq": 30,
+    "type": "Task",
+    "slot": "",
+    "title": "Invite speakers",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e04",
+   "data": {
+    "sec": "gen",
+    "seq": 40,
+    "type": "Task",
+    "slot": "",
+    "title": "Publish the schedule",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e05",
+   "data": {
+    "sec": "gen",
+    "seq": 50,
+    "type": "Task",
+    "slot": "",
+    "title": "Order badges and signs",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i01",
+   "data": {
+    "entry": "e05",
+    "sec": "",
+    "seq": 10,
+    "kind": "Print",
+    "title": "Badges",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i02",
+   "data": {
+    "entry": "e05",
+    "sec": "",
+    "seq": 20,
+    "kind": "Print",
+    "title": "Signs",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e06",
+   "data": {
+    "sec": "d1",
+    "seq": 60,
+    "type": "Session",
+    "slot": "Keynote",
+    "title": "Welcome",
+    "start": "09:00",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="planner-backend" content="static">
+<meta name="planner-data" content="mmikol/tada-data">
+<meta name="planner-was-at" content="/muster/">
+<meta name="planner-data-was" content="mmikol/muster-data">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Events</title>
+<link rel="icon" href="icon.svg?v=7a766d5b" type="image/svg+xml">
+<link rel="icon" href="icon-32.png?v=7a766d5b" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="icon-180.png?v=7a766d5b">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161615" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="TA-DA">
+<script src="v/03315316d68c/js/first.js"></script>
+<link rel="stylesheet" href="v/03315316d68c/app.css">
+</head>
+<body data-screen="boot">
+<aside class="side">
+  <div class="ident">
+    <a class="mark" href="#/"><img src="icon.svg?v=7a766d5b" alt=""><span id="mark"></span></a>
+    <span class="acro-s" id="acro" hidden></span>
+    <button type="button" class="side-off" id="side-off" aria-label="Hide the side list" title="Hide the side list"></button>
+    <h1 id="title"></h1>
+    <span class="sub" id="sub"></span>
+  </div>
+  <nav class="nav" id="nav" aria-label="Views"></nav>
+</aside>
+<div class="side-grip" id="side-grip" role="separator" aria-orientation="vertical" aria-label="Width of the side list" aria-valuemin="160" aria-valuemax="520" tabindex="0" title="Drag to change the width. Double-click for the usual width."></div>
+<div class="shade" id="shade"></div>
+<div class="main">
+  <header class="bar">
+    <div class="bar-a">
+      <button type="button" class="menu" id="menu" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i></i></button>
+      <span class="here" id="here"></span>
+      <span class="save" id="save" role="status"></span>
+    </div>
+    <div class="bar-b">
+      <form class="find" id="find" role="search"><input id="q" type="search" placeholder="Search" title="Press / to search" aria-label="Search" autocomplete="off"></form>
+      <span class="undo"><button type="button" class="btn sm" id="undo" disabled>Undo</button><button type="button" class="btn sm" id="redo" disabled>Redo</button></span>
+    </div>
+  </header>
+  <main class="wrap"><div id="view"><p class="empty opening">Opening…<span> A slow connection can take a little while.</span></p></div></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span id="toast-t"></span><button id="toast-b" type="button" hidden>Undo</button></div>
+<script type="module" src="v/03315316d68c/js/main.js"></script>
+</body>
+</html>

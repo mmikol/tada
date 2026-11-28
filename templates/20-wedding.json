@@ -1,0 +1,528 @@
+{
+ "plan": {
+  "id": "tpl-wedding",
+  "name": "Wedding",
+  "kind": "template",
+  "dates": "",
+  "venue": "",
+  "note": "Ceremony and reception with guests, vendors and a budget, plus a planning checklist.",
+  "days": 2
+ },
+ "docs": [
+  {
+   "path": "meta/config",
+   "data": {
+    "sections": [
+     {
+      "key": "gen",
+      "kind": "general",
+      "label": "Planning",
+      "long": "Planning",
+      "date": "",
+      "note": "",
+      "color": 0
+     },
+     {
+      "key": "d1",
+      "kind": "day",
+      "label": "Day 1",
+      "long": "Day 1",
+      "date": "",
+      "note": "",
+      "color": 3
+     },
+     {
+      "key": "d2",
+      "kind": "day",
+      "label": "Day 2",
+      "long": "Day 2",
+      "date": "",
+      "note": "",
+      "color": 4
+     }
+    ],
+    "entryTypes": [
+     {
+      "name": "Ceremony",
+      "tasks": [
+       "Setup"
+      ]
+     },
+     {
+      "name": "Reception",
+      "tasks": [
+       "Setup",
+       "Cleanup"
+      ]
+     },
+     {
+      "name": "Meal",
+      "slots": [
+       "Breakfast",
+       "Lunch",
+       "Cocktail hour",
+       "Dinner",
+       "Cake",
+       "Bar",
+       "Late night"
+      ],
+      "daily": [],
+      "sourceLabel": "Food source",
+      "sources": [
+       "Catered",
+       "Venue",
+       "Family",
+       "Deliver"
+      ],
+      "tasks": [],
+      "taskSlots": []
+     },
+     {
+      "name": "Getting ready"
+     },
+     {
+      "name": "Photos"
+     },
+     {
+      "name": "Travel"
+     },
+     {
+      "name": "Rehearsal"
+     },
+     {
+      "name": "Planning",
+      "general": true
+     }
+    ],
+    "itemKinds": [
+     {
+      "name": "Do",
+      "label": "To do",
+      "task": true
+     },
+     {
+      "name": "Book",
+      "label": "To book"
+     },
+     {
+      "name": "Buy",
+      "label": "To buy"
+     },
+     {
+      "name": "Rent",
+      "label": "To rent"
+     },
+     {
+      "name": "Bring",
+      "label": "To bring"
+     },
+     {
+      "name": "Make",
+      "label": "To make"
+     },
+     {
+      "name": "Print",
+      "label": "To print"
+     },
+     {
+      "name": "Menu",
+      "label": "On the menu",
+      "quiet": true
+     }
+    ],
+    "statuses": [
+     {
+      "name": "Not started"
+     },
+     {
+      "name": "In progress",
+      "tone": "warn"
+     },
+     {
+      "name": "Waiting",
+      "tone": "warn"
+     },
+     {
+      "name": "Booked",
+      "tone": "good"
+     },
+     {
+      "name": "Done/Planned",
+      "done": true
+     },
+     {
+      "name": "Not needed",
+      "skip": true
+     }
+    ],
+    "teamTypes": [
+     "Wedding party",
+     "Family",
+     "Crew"
+    ],
+    "tables": [
+     {
+      "id": "guests",
+      "name": "Guests",
+      "one": "party",
+      "group": "rsvp",
+      "fields": [
+       {
+        "key": "party",
+        "label": "Party",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "side",
+        "label": "Side",
+        "type": "choice",
+        "options": [
+         "Partner 1",
+         "Partner 2",
+         "Both"
+        ]
+       },
+       {
+        "key": "adults",
+        "label": "Adults",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "kids",
+        "label": "Kids",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "rsvp",
+        "label": "RSVP",
+        "type": "choice",
+        "options": [
+         "Yes",
+         "No",
+         "Pending"
+        ],
+        "quick": true,
+        "attention": [
+         "Pending"
+        ]
+       },
+       {
+        "key": "meal",
+        "label": "Meal choice",
+        "type": "choice",
+        "options": []
+       },
+       {
+        "key": "table",
+        "label": "Table",
+        "type": "text"
+       },
+       {
+        "key": "invite",
+        "label": "Invitation sent",
+        "type": "check"
+       },
+       {
+        "key": "thanks",
+        "label": "Thank-you sent",
+        "type": "check"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "vendors",
+      "name": "Vendors",
+      "one": "vendor",
+      "group": "status",
+      "fields": [
+       {
+        "key": "service",
+        "label": "Service",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "company",
+        "label": "Company",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "contact",
+        "label": "Contact",
+        "type": "text"
+       },
+       {
+        "key": "phone",
+        "label": "Phone",
+        "type": "text"
+       },
+       {
+        "key": "status",
+        "label": "Status",
+        "type": "choice",
+        "options": [
+         "Researching",
+         "Booked",
+         "Paid in full"
+        ],
+        "quick": true,
+        "attention": [
+         "Researching"
+        ]
+       },
+       {
+        "key": "deposit",
+        "label": "Deposit paid",
+        "type": "check"
+       },
+       {
+        "key": "due",
+        "label": "Balance due",
+        "type": "date"
+       },
+       {
+        "key": "lead",
+        "label": "Our lead",
+        "type": "person"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "budget",
+      "name": "Budget",
+      "one": "line",
+      "group": "category",
+      "fields": [
+       {
+        "key": "category",
+        "label": "Category",
+        "type": "text"
+       },
+       {
+        "key": "description",
+        "label": "Description",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "est",
+        "label": "Estimate",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "actual",
+        "label": "Actual",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "check",
+        "quick": true
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "path": "meta/people",
+   "data": {
+    "people": [],
+    "teams": []
+   }
+  },
+  {
+   "path": "entries/e01",
+   "data": {
+    "sec": "gen",
+    "seq": 10,
+    "type": "Planning",
+    "slot": "",
+    "title": "Set the budget",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e02",
+   "data": {
+    "sec": "gen",
+    "seq": 20,
+    "type": "Planning",
+    "slot": "",
+    "title": "Book the venue",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e03",
+   "data": {
+    "sec": "gen",
+    "seq": 30,
+    "type": "Planning",
+    "slot": "",
+    "title": "Book the officiant",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e04",
+   "data": {
+    "sec": "gen",
+    "seq": 40,
+    "type": "Planning",
+    "slot": "",
+    "title": "Book photographer, music and flowers",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e05",
+   "data": {
+    "sec": "gen",
+    "seq": 50,
+    "type": "Planning",
+    "slot": "",
+    "title": "Send save-the-dates",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e06",
+   "data": {
+    "sec": "gen",
+    "seq": 60,
+    "type": "Planning",
+    "slot": "",
+    "title": "Send invitations",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e07",
+   "data": {
+    "sec": "gen",
+    "seq": 70,
+    "type": "Planning",
+    "slot": "",
+    "title": "Choose the menu and the cake",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e08",
+   "data": {
+    "sec": "gen",
+    "seq": 80,
+    "type": "Planning",
+    "slot": "",
+    "title": "Plan the seating",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e09",
+   "data": {
+    "sec": "gen",
+    "seq": 90,
+    "type": "Planning",
+    "slot": "",
+    "title": "Confirm every vendor a week ahead",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  }
+ ]
+}

@@ -1,0 +1,368 @@
+{
+ "plan": {
+  "id": "tpl-weekend",
+  "name": "Weekend gathering",
+  "kind": "template",
+  "dates": "",
+  "venue": "",
+  "note": "A few days together under one roof: meals every day, rooms, guests and a budget.",
+  "days": 3
+ },
+ "docs": [
+  {
+   "path": "meta/config",
+   "data": {
+    "sections": [
+     {
+      "key": "gen",
+      "kind": "general",
+      "label": "Logistics",
+      "long": "Logistics",
+      "date": "",
+      "note": "",
+      "color": 0
+     },
+     {
+      "key": "d1",
+      "kind": "day",
+      "label": "Day 1",
+      "long": "Day 1",
+      "date": "",
+      "note": "",
+      "color": 1
+     },
+     {
+      "key": "d2",
+      "kind": "day",
+      "label": "Day 2",
+      "long": "Day 2",
+      "date": "",
+      "note": "",
+      "color": 2
+     },
+     {
+      "key": "d3",
+      "kind": "day",
+      "label": "Day 3",
+      "long": "Day 3",
+      "date": "",
+      "note": "",
+      "color": 3
+     }
+    ],
+    "entryTypes": [
+     {
+      "name": "Meal",
+      "slots": [
+       "Breakfast",
+       "Brunch",
+       "Lunch",
+       "Dinner",
+       "Dessert",
+       "Drinks",
+       "To go"
+      ],
+      "daily": [
+       "Breakfast",
+       "Lunch",
+       "Dinner"
+      ],
+      "sourceLabel": "Food source",
+      "sources": [
+       "Bring",
+       "Pick up on arrival",
+       "Shop locally",
+       "Catered",
+       "Deliver",
+       "Make"
+      ],
+      "tasks": [
+       "Setup",
+       "Cleanup"
+      ],
+      "taskSlots": [
+       "Breakfast",
+       "Brunch",
+       "Lunch",
+       "Dinner"
+      ]
+     },
+     {
+      "name": "Activity"
+     },
+     {
+      "name": "Travel"
+     },
+     {
+      "name": "Schedule"
+     },
+     {
+      "name": "Logistics",
+      "general": true
+     }
+    ],
+    "itemKinds": [
+     {
+      "name": "Menu",
+      "label": "On the menu",
+      "quiet": true
+     },
+     {
+      "name": "Do",
+      "label": "To do",
+      "task": true
+     },
+     {
+      "name": "Buy",
+      "label": "To buy"
+     },
+     {
+      "name": "Bring",
+      "label": "To bring"
+     },
+     {
+      "name": "Make",
+      "label": "To make"
+     },
+     {
+      "name": "Print",
+      "label": "To print"
+     }
+    ],
+    "statuses": [
+     {
+      "name": "Not started"
+     },
+     {
+      "name": "In progress",
+      "tone": "warn"
+     },
+     {
+      "name": "Waiting",
+      "tone": "warn"
+     },
+     {
+      "name": "Bought",
+      "tone": "good",
+      "items": true
+     },
+     {
+      "name": "Done/Planned",
+      "done": true
+     },
+     {
+      "name": "Not needed",
+      "skip": true
+     }
+    ],
+    "teamTypes": [
+     "Cleanup team",
+     "Family"
+    ],
+    "tables": [
+     {
+      "id": "guests",
+      "name": "Guests",
+      "one": "household",
+      "group": "rsvp",
+      "fields": [
+       {
+        "key": "family",
+        "label": "Household",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "contact",
+        "label": "Contact",
+        "type": "text"
+       },
+       {
+        "key": "adults",
+        "label": "Adults",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "kids",
+        "label": "Kids",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "rsvp",
+        "label": "RSVP",
+        "type": "choice",
+        "options": [
+         "Yes",
+         "No",
+         "Pending"
+        ],
+        "quick": true,
+        "attention": [
+         "Pending"
+        ]
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "rooms",
+      "name": "Rooms",
+      "one": "room",
+      "group": "building",
+      "fields": [
+       {
+        "key": "building",
+        "label": "Building",
+        "type": "text"
+       },
+       {
+        "key": "room",
+        "label": "Room",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "who",
+        "label": "Who",
+        "type": "text"
+       },
+       {
+        "key": "adults",
+        "label": "Adults",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "kids",
+        "label": "Kids",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "photo",
+        "label": "Photo",
+        "type": "photo"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "budget",
+      "name": "Budget",
+      "one": "line",
+      "group": "category",
+      "fields": [
+       {
+        "key": "category",
+        "label": "Category",
+        "type": "text"
+       },
+       {
+        "key": "description",
+        "label": "Description",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "est",
+        "label": "Estimate",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paidBy",
+        "label": "Paid by",
+        "type": "person"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "path": "meta/people",
+   "data": {
+    "people": [],
+    "teams": []
+   }
+  },
+  {
+   "path": "entries/e01",
+   "data": {
+    "sec": "gen",
+    "seq": 10,
+    "type": "Logistics",
+    "slot": "",
+    "title": "Send invitations",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e02",
+   "data": {
+    "sec": "gen",
+    "seq": 20,
+    "type": "Logistics",
+    "slot": "",
+    "title": "Decide who sleeps where",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e03",
+   "data": {
+    "sec": "gen",
+    "seq": 30,
+    "type": "Logistics",
+    "slot": "",
+    "title": "Plan the grocery run",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  }
+ ]
+}

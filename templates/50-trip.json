@@ -1,0 +1,370 @@
+{
+ "plan": {
+  "id": "tpl-trip",
+  "name": "Trip",
+  "kind": "template",
+  "dates": "",
+  "venue": "",
+  "note": "Things to book and pack before you go, then a day-by-day itinerary.",
+  "days": 3
+ },
+ "docs": [
+  {
+   "path": "meta/config",
+   "data": {
+    "sections": [
+     {
+      "key": "gen",
+      "kind": "general",
+      "label": "Before you go",
+      "long": "Before you go",
+      "date": "",
+      "note": "",
+      "color": 0
+     },
+     {
+      "key": "d1",
+      "kind": "day",
+      "label": "Day 1",
+      "long": "Day 1",
+      "date": "",
+      "note": "",
+      "color": 1
+     },
+     {
+      "key": "d2",
+      "kind": "day",
+      "label": "Day 2",
+      "long": "Day 2",
+      "date": "",
+      "note": "",
+      "color": 2
+     },
+     {
+      "key": "d3",
+      "kind": "day",
+      "label": "Day 3",
+      "long": "Day 3",
+      "date": "",
+      "note": "",
+      "color": 3
+     }
+    ],
+    "entryTypes": [
+     {
+      "name": "Travel",
+      "slots": [
+       "Flight",
+       "Train",
+       "Drive",
+       "Ferry"
+      ],
+      "daily": [],
+      "sourceLabel": "Booked through",
+      "sources": [],
+      "tasks": [],
+      "taskSlots": []
+     },
+     {
+      "name": "Stay"
+     },
+     {
+      "name": "Activity"
+     },
+     {
+      "name": "Meal",
+      "slots": [
+       "Breakfast",
+       "Lunch",
+       "Dinner"
+      ],
+      "daily": [],
+      "sourceLabel": "",
+      "sources": [],
+      "tasks": [],
+      "taskSlots": []
+     },
+     {
+      "name": "Task",
+      "general": true
+     }
+    ],
+    "itemKinds": [
+     {
+      "name": "Do",
+      "label": "To do",
+      "task": true
+     },
+     {
+      "name": "Book",
+      "label": "To book"
+     },
+     {
+      "name": "Pack",
+      "label": "To pack"
+     },
+     {
+      "name": "Buy",
+      "label": "To buy"
+     }
+    ],
+    "statuses": [
+     {
+      "name": "Not started"
+     },
+     {
+      "name": "In progress",
+      "tone": "warn"
+     },
+     {
+      "name": "Booked",
+      "tone": "good"
+     },
+     {
+      "name": "Packed",
+      "tone": "good",
+      "items": true
+     },
+     {
+      "name": "Done/Planned",
+      "done": true
+     },
+     {
+      "name": "Not needed",
+      "skip": true
+     }
+    ],
+    "teamTypes": [
+     "Travel party"
+    ],
+    "tables": [
+     {
+      "id": "bookings",
+      "name": "Bookings",
+      "one": "booking",
+      "group": "kind",
+      "fields": [
+       {
+        "key": "what",
+        "label": "What",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "kind",
+        "label": "Kind",
+        "type": "choice",
+        "options": [
+         "Flight",
+         "Stay",
+         "Car",
+         "Activity"
+        ]
+       },
+       {
+        "key": "ref",
+        "label": "Confirmation",
+        "type": "text"
+       },
+       {
+        "key": "date",
+        "label": "Date",
+        "type": "date"
+       },
+       {
+        "key": "cost",
+        "label": "Cost",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "check",
+        "quick": true
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "budget",
+      "name": "Budget",
+      "one": "line",
+      "group": "category",
+      "fields": [
+       {
+        "key": "category",
+        "label": "Category",
+        "type": "text"
+       },
+       {
+        "key": "description",
+        "label": "Description",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "est",
+        "label": "Estimate",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "path": "meta/people",
+   "data": {
+    "people": [],
+    "teams": []
+   }
+  },
+  {
+   "path": "entries/e01",
+   "data": {
+    "sec": "gen",
+    "seq": 10,
+    "type": "Task",
+    "slot": "",
+    "title": "Book travel",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e02",
+   "data": {
+    "sec": "gen",
+    "seq": 20,
+    "type": "Task",
+    "slot": "",
+    "title": "Book places to stay",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e03",
+   "data": {
+    "sec": "gen",
+    "seq": 30,
+    "type": "Task",
+    "slot": "",
+    "title": "Check passports and visas",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e04",
+   "data": {
+    "sec": "gen",
+    "seq": 40,
+    "type": "Task",
+    "slot": "",
+    "title": "Pack",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i01",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 10,
+    "kind": "Pack",
+    "title": "Passport and tickets",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i02",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 20,
+    "kind": "Pack",
+    "title": "Chargers and adapters",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i03",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 30,
+    "kind": "Pack",
+    "title": "Medicine",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  }
+ ]
+}

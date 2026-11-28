@@ -1,0 +1,437 @@
+{
+ "plan": {
+  "id": "tpl-party",
+  "name": "Party",
+  "kind": "template",
+  "dates": "",
+  "venue": "",
+  "note": "One day: a short checklist before, a run of the day, guests and a budget.",
+  "days": 1
+ },
+ "docs": [
+  {
+   "path": "meta/config",
+   "data": {
+    "sections": [
+     {
+      "key": "gen",
+      "kind": "general",
+      "label": "Before",
+      "long": "Before",
+      "date": "",
+      "note": "",
+      "color": 0
+     },
+     {
+      "key": "d1",
+      "kind": "day",
+      "label": "Day 1",
+      "long": "Day 1",
+      "date": "",
+      "note": "",
+      "color": 1
+     }
+    ],
+    "entryTypes": [
+     {
+      "name": "Activity"
+     },
+     {
+      "name": "Meal",
+      "slots": [
+       "Snacks",
+       "Dinner",
+       "Dessert",
+       "Drinks"
+      ],
+      "daily": [],
+      "sourceLabel": "Food source",
+      "sources": [
+       "Make",
+       "Potluck",
+       "Catered",
+       "Deliver"
+      ],
+      "tasks": [],
+      "taskSlots": []
+     },
+     {
+      "name": "Setup"
+     },
+     {
+      "name": "Task",
+      "general": true
+     }
+    ],
+    "itemKinds": [
+     {
+      "name": "Do",
+      "label": "To do",
+      "task": true
+     },
+     {
+      "name": "Buy",
+      "label": "To buy"
+     },
+     {
+      "name": "Bring",
+      "label": "To bring"
+     },
+     {
+      "name": "Make",
+      "label": "To make"
+     },
+     {
+      "name": "Menu",
+      "label": "On the menu",
+      "quiet": true
+     }
+    ],
+    "statuses": [
+     {
+      "name": "Not started"
+     },
+     {
+      "name": "In progress",
+      "tone": "warn"
+     },
+     {
+      "name": "Bought",
+      "tone": "good",
+      "items": true
+     },
+     {
+      "name": "Done/Planned",
+      "done": true
+     },
+     {
+      "name": "Not needed",
+      "skip": true
+     }
+    ],
+    "teamTypes": [
+     "Hosts",
+     "Helpers"
+    ],
+    "tables": [
+     {
+      "id": "guests",
+      "name": "Guests",
+      "one": "guest",
+      "group": "rsvp",
+      "fields": [
+       {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "adults",
+        "label": "Adults",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "kids",
+        "label": "Kids",
+        "type": "number",
+        "sum": true
+       },
+       {
+        "key": "rsvp",
+        "label": "RSVP",
+        "type": "choice",
+        "options": [
+         "Yes",
+         "No",
+         "Pending"
+        ],
+        "quick": true,
+        "attention": [
+         "Pending"
+        ]
+       },
+       {
+        "key": "diet",
+        "label": "Food needs",
+        "type": "text"
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     },
+     {
+      "id": "budget",
+      "name": "Budget",
+      "one": "line",
+      "group": "category",
+      "fields": [
+       {
+        "key": "category",
+        "label": "Category",
+        "type": "text"
+       },
+       {
+        "key": "description",
+        "label": "Description",
+        "type": "text",
+        "title": true
+       },
+       {
+        "key": "est",
+        "label": "Estimate",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "paid",
+        "label": "Paid",
+        "type": "money",
+        "sum": true
+       },
+       {
+        "key": "notes",
+        "label": "Notes",
+        "type": "long"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "path": "meta/people",
+   "data": {
+    "people": [],
+    "teams": []
+   }
+  },
+  {
+   "path": "entries/e01",
+   "data": {
+    "sec": "gen",
+    "seq": 10,
+    "type": "Task",
+    "slot": "",
+    "title": "Pick the date and the guest list",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e02",
+   "data": {
+    "sec": "gen",
+    "seq": 20,
+    "type": "Task",
+    "slot": "",
+    "title": "Send invitations",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e03",
+   "data": {
+    "sec": "gen",
+    "seq": 30,
+    "type": "Task",
+    "slot": "",
+    "title": "Plan food and drinks",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e04",
+   "data": {
+    "sec": "gen",
+    "seq": 40,
+    "type": "Task",
+    "slot": "",
+    "title": "Shop",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i01",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 10,
+    "kind": "Buy",
+    "title": "Food",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i02",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 20,
+    "kind": "Buy",
+    "title": "Drinks and ice",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i03",
+   "data": {
+    "entry": "e04",
+    "sec": "",
+    "seq": 30,
+    "kind": "Buy",
+    "title": "Decorations",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e05",
+   "data": {
+    "sec": "d1",
+    "seq": 50,
+    "type": "Setup",
+    "slot": "",
+    "title": "Set up",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i04",
+   "data": {
+    "entry": "e05",
+    "sec": "",
+    "seq": 40,
+    "kind": "Do",
+    "title": "Tables and chairs",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "items/i05",
+   "data": {
+    "entry": "e05",
+    "sec": "",
+    "seq": 50,
+    "kind": "Do",
+    "title": "Music",
+    "qty": null,
+    "unit": "",
+    "where": "",
+    "owner": "",
+    "helpers": [],
+    "status": "",
+    "cost": null,
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e06",
+   "data": {
+    "sec": "d1",
+    "seq": 60,
+    "type": "Activity",
+    "slot": "",
+    "title": "Guests arrive",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  },
+  {
+   "path": "entries/e07",
+   "data": {
+    "sec": "d1",
+    "seq": 70,
+    "type": "Setup",
+    "slot": "",
+    "title": "Clean up",
+    "start": "",
+    "end": "",
+    "due": "",
+    "location": "",
+    "owner": "",
+    "helpers": [],
+    "source": "",
+    "status": "",
+    "notes": ""
+   }
+  }
+ ]
+}
